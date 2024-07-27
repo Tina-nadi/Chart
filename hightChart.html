@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>نمودار با های چارت</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <div id="chart-container"></div>
+  <script>
+    const chartOptions = {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'نمودار خطی'
+      },
+      xAxis: {
+        categories: ['Jan', 'Feb', 'Mar']
+      },
+      yAxis: {
+        title: {
+          text: 'مقدار'
+        }
+      },
+      Legend:{
+        enabled: true,
+      },
+      series: [{
+        name: 'jan',
+        data: [10, 20, 30, 40, 50, 60]
+      },{
+        name:'feb',
+        data: [15,25,56,98]
+      },{
+        name:'Mar',
+        data: [20,35,70,50]
+      }
+    ]
+    };
+    Highcharts.chart('chart-container', chartOptions);
+  </script>
+</body>
+</html>

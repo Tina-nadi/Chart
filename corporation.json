@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Big Corpration",
+        "numberOfEmployees":1000,
+        "ceo":"mary",
+        "rating":3.6
+    },
+    {
+        "name":"small Statup",
+        "numberOfEmployees":3,
+        "ceo":null,
+        "rating":4.3
+    }
+]
