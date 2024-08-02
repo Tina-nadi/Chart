@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>نمودار با های چارت</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+
+  <div id="chart-container"></div>
+
+  <script>
+    // const dataObject = {
+    //   apples: 10,
+    //   Banana: 20,
+    //   Orenges: 30
+    // };
+    // const seriesData = Object.entries(dataObject).map(([name, value]) => ({
+    //   name,
+    //   data: [value]
+    // }));
+    // console.log(seriesData);
+
+    fetch('GetTemp30s.php')  
+  .then(response => response.json())  
+  .then(data => {  
+    const dataObject = data;  
+    console.log(dataObject);  
+
+    const seriesData = dataObject.map(item => item.value);  
+    const chartOptions = {  
+      chart: {  
+        type: 'column'  
+      },  
+      title: {  
+        text: 'Temperature Distribution'  
+      },  
+      xAxis: {  
+        categories: dataObject.map(item => item.name)   
+      },  
+      series: [{  
+        name: 'Temperature',  
+        data: seriesData  
+      }]  
+    };  
+
+    Highcharts.chart('chart-container', chartOptions);  
+  });
+</script>
+    
+</body>
+</html>
